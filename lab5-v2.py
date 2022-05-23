@@ -1,11 +1,6 @@
 from math import floor, ceil
 import numpy as np
 
-# Вариант 13.
-# E   B          1
-#             4     2
-# D   C          3
-
 class iMatrix:
     def __init__(self, k, n):
         self.k = k
@@ -81,7 +76,9 @@ class iMatrix:
             self.result = (np.linalg.matrix_power(self.matrixA, -1) + np.tril(self.matrixA) - np.linalg.matrix_power(self.matrixF, -1)) * self.k
     
 try:    
-    matrix = iMatrix(3, 3)
+    N = int(input('Введите N: '))
+    K = int(input('Введите K: '))
+    matrix = iMatrix(K, N)
     matrix.changeMatrixF()
     matrix.printResult()
 except:
